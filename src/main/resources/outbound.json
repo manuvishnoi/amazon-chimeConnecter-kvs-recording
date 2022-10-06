@@ -1,0 +1,32 @@
+{
+  "callId": "woC-Qg44MIWb6SSE1HyI0w..",
+  "currentFragmentNumber": "91343852333181432457054944691652498206464649075",
+  "direction": "Outbound",
+  "endTime": "2022-10-04T01:02:05.424Z",
+  "fromNumber": "+16142546641",
+  "inviteHeaders": {
+    "record-route": "<sip:3.80.16.103:5060;r2=on;lr;ftag=763fea2a;did=9fd1.ccd2;nat=yes>,<sip:3.80.16.103;transport=tcp;r2=on;lr;ftag=763fea2a;did=9fd1.ccd2;nat=yes>",
+    "via": "SIP/2.0/UDP 3.80.16.103:5060;branch=z9hG4bKd2e3.629f48fb8a966ada77bdef2e3f7a8d33.0;i=3041f1;received=10.0.145.239;rport=5060,SIP/2.0/TCP 172.31.54.11:5060;received=44.202.130.34;branch=z9hG4bK-524287-1---85fd9a5291cc3075;rport=57535",
+    "max-forwards": "69",
+    "contact": "<sip:+16142546641@44.202.130.34:5060;transport=TCP;alias=44.202.130.34~57535~2>",
+    "to": "<sip:+16304562235@hul0ytfnsqnqjvaahbgg4.voiceconnector.chime.aws;transport=TCP>",
+    "from": "\"+16142546641\"<sip:+16142546641@hul0ytfnsqnqjvaahbgg4.voiceconnector.chime.aws;transport=TCP>;tag=763fea2a",
+    "call-id": "woC-Qg44MIWb6SSE1HyI0w..",
+    "cseq": "2 INVITE",
+    "allow": "INVITE, ACK, CANCEL, OPTIONS, BYE, REGISTER, SUBSCRIBE, NOTIFY, REFER, INFO, MESSAGE, UPDATE",
+    "content-type": "application/sdp",
+    "supported": "replaces, timer",
+    "user-agent": "3CXPhoneSystem 18.0.5.418 (418)",
+    "authorization": "Digest username=\"3cxdemo\",realm=\"hul0ytfnsqnqjvaahbgg4\",nonce=\"36eab7b3b788626a0d4671fbca9c05ac036802aea6f1f0047c1ea7691f15eec5\",uri=\"sip:+16304562235@hul0ytfnsqnqjvaahbgg4.voiceconnector.chime.aws;transport=TCP\",response=\"e1f11e4885368f3bc39711435b9600f7\",algorithm=MD5",
+    "content-length": "288"
+  },
+  "isCaller": true,
+  "startFragmentNumber": "91343852333181432392682062648812720801795789189",
+  "startTime": "2022-10-04T01:01:53.788Z",
+  "streamArn": "arn:aws:kinesisvideo:us-east-1:801011379177:stream/ChimeVoiceConnector-hul0ytfnsqnqjvaahbgg4-7c91fd85-39e9-4660-a42d-9abd09c95111/1664845313408",
+  "toNumber": "+16304562235",
+  "transactionId": "62f64fcf-b306-4e9d-80bf-9035ad5529a2",
+  "voiceConnectorId": "hul0ytfnsqnqjvaahbgg4",
+  "streamingStatus": "ENDED",
+  "version": "0"
+}

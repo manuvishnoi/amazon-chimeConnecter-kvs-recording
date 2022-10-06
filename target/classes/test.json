@@ -1,0 +1,100 @@
+{
+  "callId": "08534c95-feb9-48e5-9c0e-16bd1e532ff2",
+  "currentFragmentNumber": "91343852333181432442199664220267097676659296690",
+  "direction": "Inbound",
+  "endTime": "2022-10-05T17:33:39.466Z",
+  "fromNumber": "+16304562235",
+  "isCaller": false,
+  "startFragmentNumber": "91343852333181432392682062648851884413330335413",
+  "startTime": "2022-10-05T17:33:29.613Z",
+  "streamArn": "arn:aws:kinesisvideo:us-east-1:801011379177:stream/ChimeVoiceConnector-hul0ytfnsqnqjvaahbgg4-6b903899-6753-4f57-935f-3d5277eb313c/1664991209258",
+  "toNumber": "+16142546641",
+  "transactionId": "91ed14d0-287a-470c-a7fb-4253883cf190",
+  "voiceConnectorId": "hul0ytfnsqnqjvaahbgg4",
+  "streamingStatus": "ENDED",
+  "version": "0"
+}
+
+{
+  "callId": "08534c95-feb9-48e5-9c0e-16bd1e532ff2",
+  "currentFragmentNumber": "91343852333181432442199664220267097628027162816",
+  "direction": "Inbound",
+  "endTime": "2022-10-05T17:33:39.494Z",
+  "fromNumber": "+16304562235",
+  "isCaller": true,
+  "startFragmentNumber": "91343852333181432392682062648851884388799096655",
+  "startTime": "2022-10-05T17:33:29.533Z",
+  "streamArn": "arn:aws:kinesisvideo:us-east-1:801011379177:stream/ChimeVoiceConnector-hul0ytfnsqnqjvaahbgg4-36f437e3-d9f0-42ea-8f97-896126a387cd/1664991209201",
+  "toNumber": "+16142546641",
+  "transactionId": "91ed14d0-287a-470c-a7fb-4253883cf190",
+  "voiceConnectorId": "hul0ytfnsqnqjvaahbgg4",
+  "streamingStatus": "ENDED",
+  "version": "0"
+}
+
+
+{
+  "callId": "d71db8c5-61bb-4f70-9875-e6b68c09b4b6",
+  "direction": "Inbound",
+  "fromNumber": "+16304562235",
+  "isCaller": false,
+  "mediaType": "audio/L16",
+  "startFragmentNumber": "91343852333181437344442219790373046851821652068",
+  "startTime": "2022-10-05T17:37:23.717Z",
+  "streamArn": "arn:aws:kinesisvideo:us-east-1:801011379177:stream/ChimeVoiceConnector-hul0ytfnsqnqjvaahbgg4-6b903899-6753-4f57-935f-3d5277eb313c/1664991209258",
+  "toNumber": "+16142546641",
+  "transactionId": "f802374f-bab5-4cf5-86f8-fe5ad38e86a1",
+  "voiceConnectorId": "hul0ytfnsqnqjvaahbgg4",
+  "streamingStatus": "STARTED",
+  "version": "0"
+}
+
+{
+  "callId": "d71db8c5-61bb-4f70-9875-e6b68c09b4b6",
+  "direction": "Inbound",
+  "fromNumber": "+16304562235",
+  "isCaller": true,
+  "mediaType": "audio/L16",
+  "startFragmentNumber": "91343852333181437344442219790373046832062058244",
+  "startTime": "2022-10-05T17:37:23.646Z",
+  "streamArn": "arn:aws:kinesisvideo:us-east-1:801011379177:stream/ChimeVoiceConnector-hul0ytfnsqnqjvaahbgg4-36f437e3-d9f0-42ea-8f97-896126a387cd/1664991209201",
+  "toNumber": "+16142546641",
+  "transactionId": "f802374f-bab5-4cf5-86f8-fe5ad38e86a1",
+  "voiceConnectorId": "hul0ytfnsqnqjvaahbgg4",
+  "streamingStatus": "STARTED",
+  "version": "0"
+}
+
+{
+  "callId": "d71db8c5-61bb-4f70-9875-e6b68c09b4b6",
+  "currentFragmentNumber": "91343852333181437686113670633138020930882765789",
+  "direction": "Inbound",
+  "endTime": "2022-10-05T17:38:31.656Z",
+  "fromNumber": "+16304562235",
+  "isCaller": false,
+  "startFragmentNumber": "91343852333181437344442219790373046851821652068",
+  "startTime": "2022-10-05T17:37:23.717Z",
+  "streamArn": "arn:aws:kinesisvideo:us-east-1:801011379177:stream/ChimeVoiceConnector-hul0ytfnsqnqjvaahbgg4-6b903899-6753-4f57-935f-3d5277eb313c/1664991209258",
+  "toNumber": "+16142546641",
+  "transactionId": "f802374f-bab5-4cf5-86f8-fe5ad38e86a1",
+  "voiceConnectorId": "hul0ytfnsqnqjvaahbgg4",
+  "streamingStatus": "ENDED",
+  "version": "0"
+}
+
+{
+  "callId": "d71db8c5-61bb-4f70-9875-e6b68c09b4b6",
+  "currentFragmentNumber": "91343852333181437681161910475996499525112115033",
+  "direction": "Inbound",
+  "endTime": "2022-10-05T17:38:31.727Z",
+  "fromNumber": "+16304562235",
+  "isCaller": true,
+  "startFragmentNumber": "91343852333181437344442219790373046832062058244",
+  "startTime": "2022-10-05T17:37:23.646Z",
+  "streamArn": "arn:aws:kinesisvideo:us-east-1:801011379177:stream/ChimeVoiceConnector-hul0ytfnsqnqjvaahbgg4-36f437e3-d9f0-42ea-8f97-896126a387cd/1664991209201",
+  "toNumber": "+16142546641",
+  "transactionId": "f802374f-bab5-4cf5-86f8-fe5ad38e86a1",
+  "voiceConnectorId": "hul0ytfnsqnqjvaahbgg4",
+  "streamingStatus": "ENDED",
+  "version": "0"
+}
