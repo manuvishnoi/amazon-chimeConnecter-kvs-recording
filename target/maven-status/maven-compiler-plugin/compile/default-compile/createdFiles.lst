@@ -1,7 +1,0 @@
-com/demo/Test.class
-com/demo/S3UploadInfo.class
-com/demo/KVSUtils.class
-com/demo/SQSListener.class
-com/demo/KVSTransactionIdTagProcessor.class
-com/demo/EventDetail.class
-com/demo/AudioUtils.class
