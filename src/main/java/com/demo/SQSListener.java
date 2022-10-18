@@ -71,11 +71,10 @@ public class SQSListener implements RequestHandler<SQSEvent, String> {
             String streamArn = eventDetail.getStreamArn();
             String startFragmentNumber = eventDetail.getStartFragmentNumber();
             String startTime = eventDetail.getStartTime();
+            String toNumber = eventDetail.getToNumber();
+            String fromNumber = eventDetail.getFromNumber();
+            String callId = eventDetail.getCallId();
 
-            logger.error("transactionId: {} ", transactionId);
-            logger.error("streamArn: {} ", streamArn);
-            logger.error("startFragmentNumber: {} ", startFragmentNumber);
-            logger.error("startTime: {} ", startTime);
 
             if (streamingStatus.equals("ENDED")) {
                 logger.error("Skipping event ");
@@ -103,7 +102,7 @@ public class SQSListener implements RequestHandler<SQSEvent, String> {
                 while (true) {
                     ByteBuffer outputBuffer = KVSUtils.getByteBufferFromStream(streamingMkvReader, fragmentVisitor, tagProcessor,
                             CHUNK_SIZE_IN_KB);
-                    logger.error(" in OutputBuffer while loop {}", outputBuffer.remaining());
+//                    logger.error(" in OutputBuffer while loop {}", outputBuffer.remaining());
 
                     if (outputBuffer.remaining() > 0) {
                         //Write audioBytes to a temporary file as they are received from the stream
@@ -123,7 +122,7 @@ public class SQSListener implements RequestHandler<SQSEvent, String> {
                 logger.error(" In finally block");
 
                 // Upload the raw audio regardless of any exception thrown in the middle
-                closeFileAndUploadRawAudio(kvsInputStream, fileOutputStream, saveAudioFilePath, transactionId, startTime);
+                closeFileAndUploadRawAudio(kvsInputStream, fileOutputStream, saveAudioFilePath, transactionId, startTime,eventDetail);
             }
 
 
@@ -144,7 +143,7 @@ public class SQSListener implements RequestHandler<SQSEvent, String> {
     }
 
     private void closeFileAndUploadRawAudio(InputStream kvsInputStream, FileOutputStream fileOutputStream,
-                                            Path saveAudioFilePath, String transactionId, String startTime) throws IOException {
+                                            Path saveAudioFilePath, String transactionId, String startTime, EventDetail eventDetail) throws IOException {
         logger.error("closeFileAndUploadRawAudio");
         try {
             kvsInputStream.close();
@@ -157,7 +156,7 @@ public class SQSListener implements RequestHandler<SQSEvent, String> {
                 logger.error("Uploading to S3 ");
 
                 AudioUtils.uploadRawAudio(Regions.US_EAST_1, "callrecordings-us-east-1-801011379177", "RECORDINGS_KEY_PREFIX",
-                        saveAudioFilePath.toString(), transactionId, startTime, false, getAWSCredentials());
+                        saveAudioFilePath.toString(), transactionId, startTime, false, getAWSCredentials(),eventDetail);
             } else {
                 logger.info("Skipping upload to S3. Audio file has 0 bytes: " + saveAudioFilePath);
             }

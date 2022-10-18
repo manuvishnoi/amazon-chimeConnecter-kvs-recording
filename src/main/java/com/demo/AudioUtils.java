@@ -22,10 +22,13 @@ import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectResult;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.commons.lang3.SerializationUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.sound.sampled.*;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -72,10 +75,11 @@ public final class AudioUtils {
      * @param keyPrefix
      * @param audioFilePath
      * @param awsCredentials
+     * @param eventDetail
      */
     public static S3UploadInfo uploadRawAudio(Regions region, String bucketName, String keyPrefix, String audioFilePath,
                                               String agentId, String contactId, boolean publicReadAcl,
-                                              AWSCredentialsProvider awsCredentials) {
+                                              AWSCredentialsProvider awsCredentials, EventDetail eventDetail) {
         File wavFile = null;
         S3UploadInfo uploadInfo = null;
 
@@ -89,14 +93,21 @@ public final class AudioUtils {
             wavFile = convertToWav(audioFilePath);
 
             // upload the raw audio file to the designated S3 location
-            String objectKey = keyPrefix + wavFile.getName();
+            String objectKey = eventDetail.getCallId() + "_" + eventDetail.getTransactionId() + "_" + eventDetail.getStartFragmentNumber();
 
-            logger.info(String.format("Uploading Audio: to %s/%s from %s", bucketName, objectKey, wavFile));
-            PutObjectRequest request = new PutObjectRequest(bucketName, objectKey, wavFile);
+            logger.info(String.format("Uploading Audio: to %s/%s from %s", bucketName, objectKey + ".wav", wavFile));
+            PutObjectRequest request = new PutObjectRequest(bucketName, objectKey + ".wav", wavFile);
             ObjectMetadata metadata = new ObjectMetadata();
             metadata.setContentType("audio/wav");
-            metadata.addUserMetadata("contact-id", contactId);
-            metadata.addUserMetadata("agent-id", agentId);
+            metadata.addUserMetadata("callId", eventDetail.getCallId());
+            metadata.addUserMetadata("direction", eventDetail.getDirection());
+            metadata.addUserMetadata("transactionId", eventDetail.getTransactionId());
+            metadata.addUserMetadata("toNumber", eventDetail.getToNumber());
+            metadata.addUserMetadata("fromNumber", eventDetail.getFromNumber());
+            metadata.addUserMetadata("startTime", eventDetail.getStartTime());
+            metadata.addUserMetadata("streamArn", eventDetail.getStreamArn());
+            metadata.addUserMetadata("event", eventDetail.toString());
+
             request.setMetadata(metadata);
 
             if (publicReadAcl) {
@@ -105,8 +116,16 @@ public final class AudioUtils {
 
             PutObjectResult s3result = s3Client.putObject(request);
 
+
+            ObjectMapper mapper = new ObjectMapper();
+            byte[] eventDetailByteArr = mapper.writeValueAsBytes(eventDetail);
+            PutObjectRequest metadataRequest = new PutObjectRequest(bucketName, objectKey + ".metadata", new ByteArrayInputStream(eventDetailByteArr), new ObjectMetadata());
+            s3Client.putObject(metadataRequest);
+
+
             logger.info("putObject completed successfully " + s3result.getETag());
-            uploadInfo = new S3UploadInfo(bucketName, objectKey, region);
+
+            uploadInfo = new S3UploadInfo(bucketName, objectKey + ".wav", region);
 
         } catch (SdkClientException e) {
             logger.error("Audio upload to S3 failed: ", e);

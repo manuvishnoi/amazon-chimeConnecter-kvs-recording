@@ -14,3 +14,36 @@
   "streamingStatus": "ENDED",
   "version": "0"
 }
+
+
+{
+  "callId": "ff399757-033d-4223-8ec8-41c7e5139857",
+  "direction": "Inbound",
+  "fromNumber": "+16096199107",
+  "isCaller": false,
+  "mediaType": "audio/L16",
+  "startFragmentNumber": "91343852333181437344442219790374887658978987514",
+  "startTime": "2022-10-05T19:31:41.261Z",
+  "streamArn": "arn:aws:kinesisvideo:us-east-1:801011379177:stream/ChimeVoiceConnector-hul0ytfnsqnqjvaahbgg4-a2343c67-3e02-4dc8-9c36-ae7af6fd7514/1664991459892",
+  "toNumber": "+16142546641",
+  "transactionId": "ac3e4547-0427-4cf9-84fa-8a9216490251",
+  "voiceConnectorId": "hul0ytfnsqnqjvaahbgg4",
+  "streamingStatus": "STARTED",
+  "version": "0"
+}
+
+{
+  "callId": "ff399757-033d-4223-8ec8-41c7e5139857",
+  "direction": "Inbound",
+  "fromNumber": "+16096199107",
+  "isCaller": true,
+  "mediaType": "audio/L16",
+  "startFragmentNumber": "91343852333181432392682062648853788026400987051",
+  "startTime": "2022-10-05T19:31:41.123Z",
+  "streamArn": "arn:aws:kinesisvideo:us-east-1:801011379177:stream/ChimeVoiceConnector-hul0ytfnsqnqjvaahbgg4-139e6599-3d5c-4d93-a298-2e1d29bb1990/1664991537538",
+  "toNumber": "+16142546641",
+  "transactionId": "ac3e4547-0427-4cf9-84fa-8a9216490251",
+  "voiceConnectorId": "hul0ytfnsqnqjvaahbgg4",
+  "streamingStatus": "STARTED",
+  "version": "0"
+}

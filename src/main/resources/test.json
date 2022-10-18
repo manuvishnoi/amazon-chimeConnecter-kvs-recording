@@ -98,3 +98,123 @@
   "streamingStatus": "ENDED",
   "version": "0"
 }
+
+{
+  "Records": [
+    {
+      "eventVersion": "2.1",
+      "eventSource": "aws:s3",
+      "awsRegion": "us-east-1",
+      "eventTime": "2022-10-16T21:17:07.667Z",
+      "eventName": "ObjectCreated:Put",
+      "userIdentity": {
+        "principalId": "A14XMX3X69W2WA"
+      },
+      "requestParameters": {
+        "sourceIPAddress": "76.181.225.218"
+      },
+      "responseElements": {
+        "x-amz-request-id": "ZFPP6XZ12TJG7SZB",
+        "x-amz-id-2": "AyCy6qv6jyaahKyTW0LeWKbcpYFH0nQ9zw2OII6GRgNud6dRblKazo0FISpa1FCCxdCePCVnshNeOI3PtEepBim21Uh7lelV"
+      },
+      "s3": {
+        "s3SchemaVersion": "1.0",
+        "configurationId": "comprehendEvent",
+        "bucket": {
+          "name": "call-recording-comprehend",
+          "ownerIdentity": {
+            "principalId": "A14XMX3X69W2WA"
+          },
+          "arn": "arn:aws:s3:::call-recording-comprehend"
+        },
+        "object": {
+          "key": "testAudio.wav-c3796ebb-f88d-48c1-b01a-002d4124ec3d+%281%29.json",
+          "size": 21364,
+          "eTag": "2c45990423c77f3198964b541493c997",
+          "sequencer": "00634C74D39AED92C6"
+        }
+      }
+    }
+  ]
+}
+
+/// Transcribe Event
+
+{
+  "Records": [
+    {
+      "eventVersion": "2.1",
+      "eventSource": "aws:s3",
+      "awsRegion": "us-east-1",
+      "eventTime": "2022-10-17T00:30:15.831Z",
+      "eventName": "ObjectCreated:Put",
+      "userIdentity": {
+        "principalId": "AWS:AROA3U777VPU4HYHPTPX7:processAudioStream"
+      },
+      "requestParameters": {
+        "sourceIPAddress": "18.234.82.64"
+      },
+      "responseElements": {
+        "x-amz-request-id": "H6EWHZSV2QABSE6T",
+        "x-amz-id-2": "UiO7wj0+75LWyHJfguIny8414B+0F/b4M/9R8fwCcDrAsSK8dlDfWzPGsPrBsKI/qmtwrKujEWqNpUscauiAYHyfNii+d6JkhDo7aUsZ7Ss="
+      },
+      "s3": {
+        "s3SchemaVersion": "1.0",
+        "configurationId": "recording-event",
+        "bucket": {
+          "name": "callrecordings-us-east-1-801011379177",
+          "ownerIdentity": {
+            "principalId": "A14XMX3X69W2WA"
+          },
+          "arn": "arn:aws:s3:::callrecordings-us-east-1-801011379177"
+        },
+        "object": {
+          "key": "4afc96c6-8430-4343-9f36-c6a418fcff42_c015e2c1-c1b1-4f2f-8607-ec9c5eeca401_91343852333181432392682062649113713590102114062.wav",
+          "size": 187884,
+          "eTag": "74d2d9f20a0f6f3b81bc682c7db62e6e",
+          "sequencer": "00634CA217B7E2226E"
+        }
+      }
+    }
+  ]
+}
+
+
+{
+  "Records": [
+    {
+      "eventVersion": "2.1",
+      "eventSource": "aws:s3",
+      "awsRegion": "us-east-1",
+      "eventTime": "2022-10-17T00:40:17.883Z",
+      "eventName": "ObjectCreated:Put",
+      "userIdentity": {
+        "principalId": "AWS:AROA3U777VPUVDNHLRNF4:lambda-comprehend"
+      },
+      "requestParameters": {
+        "sourceIPAddress": "44.201.47.27"
+      },
+      "responseElements": {
+        "x-amz-request-id": "K6Q3RFPR9WWCTTQ8",
+        "x-amz-id-2": "n1ecw68kDFvhVHighDP4T03CHb23OztiQ3fqiB6oLdfvMbtOkxg6UKaCW39U3+zNb0qr6P2wewD5ScGwO/gAaaS0N3oCCXCY"
+      },
+      "s3": {
+        "s3SchemaVersion": "1.0",
+        "configurationId": "comprehendEvent",
+        "bucket": {
+          "name": "call-recording-comprehend",
+          "ownerIdentity": {
+            "principalId": "A14XMX3X69W2WA"
+          },
+          "arn": "arn:aws:s3:::call-recording-comprehend"
+        },
+        "object": {
+          "key": "4afc96c6-8430-4343-9f36-c6a418fcff42_c015e2c1-c1b1-4f2f-8607-ec9c5eeca401_91343852333181432392682062649113713590102114062.json",
+          "size": 174,
+          "eTag": "daec03cdde56eba4cf4e653e1374568c",
+          "sequencer": "00634CA471D5090AD1"
+        }
+      }
+    }
+  ]
+}

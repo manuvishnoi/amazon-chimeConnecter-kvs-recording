@@ -1,6 +1,8 @@
 package com.demo;
 
-public class EventDetail {
+import java.io.Serializable;
+
+public class EventDetail implements Serializable {
     private String streamingStatus;
     private String transactionId;
     private String streamArn;
